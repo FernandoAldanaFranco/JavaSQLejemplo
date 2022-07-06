@@ -1,15 +1,21 @@
 package com.sic;
 
 import java.sql.*;
-
-public class App {
-    public static void main(String[] args) {
+/**
+ * Consultar datos de MySQL
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        //System.out.println( "Hello World!" );
         //Try-Catch para manejo de errores
         try {
             //Llamada a la libreria mysql conector
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             //Nueva conexión                           conexión a localhost |   nombre de bd | ususario mysql | contraseña  
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/datos", "fernando", "fer201085");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/datos", "hugohugo", "hugo");
             //Nuevo statement para llamada de datos
             Statement stmt = con.createStatement();
             //Creación de Query | llamada a todos los datos de la tabla alumnos
@@ -24,6 +30,7 @@ public class App {
             //Imprimir errores 
             System.out.println(e);
         }
-    }
 
+
+    }
 }
